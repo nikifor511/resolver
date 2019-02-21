@@ -25,6 +25,9 @@ type
 
   end;
 
+var
+  asd: integer;
+
 implementation
 
 uses Unit1;
@@ -46,6 +49,7 @@ end;
 destructor TMy_Server.Destroy;
 begin
   ServerSock.Active := false;
+  asd:= 4;
 end;
 
 procedure TMy_Server.FOnConnect(Sender: TObject; Socket: TCustomWinSocket);
