@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'SERVER'
-  ClientHeight = 492
-  ClientWidth = 635
+  ClientHeight = 385
+  ClientWidth = 637
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 8
-    Top = 475
+    Top = 364
     Width = 31
     Height = 13
     Caption = 'Label1'
@@ -31,7 +31,7 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 240
+    Left = 174
     Top = 16
     Width = 75
     Height = 25
@@ -51,8 +51,8 @@ object Form1: TForm1
   object RichEdit1: TRichEdit
     Left = 8
     Top = 47
-    Width = 299
-    Height = 386
+    Width = 226
+    Height = 282
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -64,7 +64,7 @@ object Form1: TForm1
     Zoom = 100
   end
   object Edit1: TEdit
-    Left = 136
+    Left = 119
     Top = 20
     Width = 49
     Height = 21
@@ -72,28 +72,73 @@ object Form1: TForm1
     Text = '11990'
   end
   object ListBox1: TListBox
-    Left = 344
+    Left = 240
     Top = 47
-    Width = 283
-    Height = 386
+    Width = 105
+    Height = 282
     ItemHeight = 13
     TabOrder = 5
     OnClick = ListBox1Click
   end
   object Edit2: TEdit
     Left = 8
-    Top = 448
-    Width = 473
+    Top = 337
+    Width = 226
     Height = 21
     TabOrder = 6
   end
   object Button4: TButton
-    Left = 487
-    Top = 446
-    Width = 140
+    Left = 240
+    Top = 335
+    Width = 105
     Height = 25
     Caption = 'Send'
     TabOrder = 7
     OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 544
+    Top = 119
+    Width = 83
+    Height = 25
+    Caption = 'Connect to DB'
+    TabOrder = 8
+    OnClick = Button5Click
+  end
+  object Button6: TButton
+    Left = 544
+    Top = 150
+    Width = 83
+    Height = 25
+    Caption = 'Button6'
+    TabOrder = 9
+    OnClick = Button6Click
+  end
+  object Button7: TButton
+    Left = 544
+    Top = 181
+    Width = 85
+    Height = 25
+    Caption = 'Button7'
+    TabOrder = 10
+  end
+  object FBConnect: TFDConnection
+    Params.Strings = (
+      'DriverID=FB'
+      'User_Name=sysdba'
+      'Password=masterkey')
+    AfterConnect = FBConnectAfterConnect
+    Left = 584
+    Top = 232
+  end
+  object Query: TFDQuery
+    Connection = FBConnect
+    Left = 528
+    Top = 232
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 488
+    Top = 240
   end
 end
